@@ -21,6 +21,9 @@ function render() {
 document.querySelectorAll('[data-open]').forEach(button => button.addEventListener('click', () => { lastTrigger = button; location.hash = button.dataset.open }));
 document.querySelectorAll('nav a,.eula').forEach(link => link.addEventListener('click', () => { lastTrigger = link }));
 function closeDetail() { location.hash = ''; }
-document.getElementById('back').addEventListener('click', closeDetail); document.getElementById('bottom-back').addEventListener('click', closeDetail);
+// Przyciski powrotu są opcjonalne — usunięcie jednego nie zatrzyma nawigacji.
+document.querySelectorAll('#back, #bottom-back').forEach(button => {
+    button.addEventListener('click', closeDetail);
+});
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.body.classList.contains('open')) closeDetail() });
 window.addEventListener('hashchange', render); render();
