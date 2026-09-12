@@ -1,8 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&display=swap');
+@font-face {
+    font-family: "Forgotten Futurist";
+    src: url("assets/forgotten-futurist.regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 
 :root {
-    --ink: #000000;
-    --paper: #ffffff;
+    --ink: #000;
+    --paper: #fff;
     --feature: #696969;
     --rail: 258px;
     --ease: cubic-bezier(.76, 0, .24, 1)
@@ -18,7 +24,7 @@ body {
     height: 100%;
     color: var(--ink);
     background: var(--ink);
-    font-family: Barlow, Arial, sans-serif
+    font-family: "Forgotten Futurist", sans-serif
 }
 
 button,
@@ -66,7 +72,7 @@ body {
 }
 
 .wordmark {
-    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-family: "Forgotten Futurist", sans-serif;
     font-size: clamp(46px, 7.6vw, 125px);
     font-weight: 500;
     letter-spacing: -.045em;
@@ -80,7 +86,7 @@ body {
 }
 
 .wordmark sup {
-    font-family: Arial, sans-serif;
+    font-family: "Forgotten Futurist", sans-serif;
     font-size: 16px;
     vertical-align: top;
     position: relative;
@@ -109,7 +115,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 30px 44px
 }
 
@@ -129,9 +135,9 @@ body {
     width: fit-content;
     max-width: 100%;
     padding: 28px 32px;
-    background: rgba(10, 8, 13, 0.55);
+    background: rgba(155, 219, 245, 0.42);
     -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(2px);
     border-radius: 4px;
     overflow-wrap: anywhere;
 }
@@ -155,7 +161,7 @@ p {
 }
 
 .hero h1 {
-    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-family: "Forgotten Futurist", sans-serif;
     font-weight: 500;
     font-size: clamp(64px, 7.6vw, 112px);
     line-height: .98;
@@ -248,7 +254,7 @@ nav a small {
 }
 
 nav a span {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Forgotten Futurist", sans-serif;
     font-size: 20px;
     line-height: 1.1
 }
@@ -270,7 +276,7 @@ nav a:hover {
 }
 
 .intro h2 {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Forgotten Futurist", sans-serif;
     font-size: 48px;
     font-weight: 500;
     line-height: 1.07;
@@ -311,7 +317,7 @@ nav a:hover {
 }
 
 .division-grid h3 {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Forgotten Futurist", sans-serif;
     font-size: 30px;
     font-weight: 500;
     margin-top: 30px;
@@ -366,7 +372,7 @@ footer {
 }
 
 .detail-header h1 {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Forgotten Futurist", sans-serif;
     font-size: clamp(32px, 5.5vw, 80px);
     font-weight: 500;
     letter-spacing: -.025em;
@@ -379,38 +385,22 @@ footer {
     outline: none
 }
 
-.detail-banner {
-    height: 360px;
-    background: url('assets/industry.png') center 50%/cover;
-    color: white;
-    padding: 40px 6%;
-    display: flex;
-    align-items: flex-end
-}
-
-.detail-banner p {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(36px, 4.8vw, 65px);
-    max-width: 750px;
-    line-height: 1.05;
-    margin: 0
-}
-
 .article-content {
-    max-width: 1100px;
-    margin: auto;
-    padding: 65px 7% 85px
+    width: 100%;
+    margin: 0;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .article-intro {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: minmax(220px, .9fr) minmax(0, 1.1fr);
     gap: 45px
 }
 
 .article-intro h2,
 .article-content>h2 {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Forgotten Futurist", sans-serif;
     font-size: 42px;
     font-weight: 500;
     line-height: 1.1
@@ -419,7 +409,7 @@ footer {
 .article-content p {
     font-size: 18px;
     line-height: 1.8;
-    color: #62586a
+    color: #000000
 }
 
 
@@ -751,11 +741,6 @@ body.open .detail-rail {
         font-size: clamp(28px, 7vw, 40px)
     }
 
-    .detail-banner {
-        height: 300px;
-        padding: 28px
-    }
-
     .article-content {
         padding: 38px 25px
     }
@@ -855,5 +840,160 @@ body.open .detail-rail {
     *::after {
         transition: none !important;
         scroll-behavior: auto !important
+    }
+}
+
+/* Fragmenty treści — typ wybierasz w app.js */
+.article-section {
+    margin-block: 0 30px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.article-section:last-child {
+    margin-bottom: 0;
+}
+
+.article-section h2 {
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.article-section p {
+    white-space: pre-line;
+}
+
+.article-section p:last-child {
+    margin-bottom: 0;
+}
+
+.article-media {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 36px;
+}
+
+.article-photo {
+    margin: 0;
+    border: 1px solid #000000;
+}
+
+.article-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.article-media.image-right .article-photo {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.article-media.image-right .article-copy {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: end;
+    text-align: right;
+}
+
+.article-copy,
+.article-intro>div {
+    min-width: 0;
+}
+
+.article-plain-text {
+    max-width: 75ch;
+}
+
+.article-divider {
+    width: 100%;
+    height: 0;
+    margin: 30px 0;
+    border: 0;
+    border-top: 1px solid #000000;
+}
+
+.article-banner {
+    width: 100%;
+    height: 360px;
+    margin: 0;
+    overflow: hidden;
+}
+
+.article-banner img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#detail-body>.article-content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#detail-body>.article-content:first-child {
+    padding-top: 48px;
+}
+
+#detail-body>.article-content:last-child {
+    padding-bottom: 48px;
+}
+
+.wordmark {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: "Forgotten Futurist", sans-serif;
+}
+
+@media(max-width:760px) {
+    .article-section {
+        margin-bottom: 24px;
+    }
+
+    .article-section h2 {
+        font-size: clamp(28px, 7vw, 36px);
+    }
+
+    .article-media {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    .article-media.image-right .article-photo,
+    .article-media.image-right .article-copy {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .article-media.image-right .article-copy {
+        justify-self: stretch;
+        text-align: left;
+    }
+
+    .article-divider {
+        margin: 24px 0;
+    }
+
+    .article-banner {
+        height: 220px;
+    }
+
+    #detail-body>.article-content,
+    #detail-body>.article-content:first-child,
+    #detail-body>.article-content:last-child {
+        padding-top: 24px;
+        padding-bottom: 24px;
     }
 }

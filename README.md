@@ -1,28 +1,77 @@
-# AsperGenerator
+# AsperGenerator — edycja strony
 
-Statyczna strona fikcyjnej firmy do roleplayu. HTML, CSS i JavaScript, bez instalacji i bez procesu budowania.
+Strona jest statyczna: nie wymaga instalacji ani kompilowania. Treści strony głównej i menu edytujesz w `index.html`, treści działów w `app.js`, a wygląd wszystkich elementów w `style.css`.
 
-## GitHub Pages
+## Fragmenty działów w app.js
 
-1. Rozpakuj paczkę `AsperGenerator-GitHub.zip`.
-2. Utwórz repozytorium na GitHubie.
-3. Wgraj zawartość paczki do głównego katalogu repozytorium. Plik `index.html` musi być bezpośrednio w katalogu głównym, obok `style.css`, `app.js` i folderu `assets`.
-4. Otwórz Settings → Pages. W sekcji Build and deployment wybierz Deploy from a branch, gałąź main i folder / (root), a następnie Save.
-5. GitHub wyświetli adres opublikowanej strony po zakończeniu wdrożenia.
+Każdy dział zawiera `label`, `title` i tablicę `sections`. Kolejność obiektów w `sections` odpowiada kolejności fragmentów na stronie. Możesz dodawać ich dowolnie dużo i używać tego samego typu wiele razy.
 
-Nie trzeba ustawiać domeny ani instalować Node.js. Możesz również otworzyć `index.html` bezpośrednio na komputerze. Google Fonts wymaga połączenia z internetem; bez niego strona użyje fontów systemowych.
+```js
+sections: [
+    {
+        type: 'intro',
+        heading: 'Szerszy nagłówek po lewej',
+        body: 'Tekst wprowadzający po prawej.'
+    },
+    {
+        type: 'text',
+        heading: 'Nagłówek nad tekstem',
+        body: ['Pierwszy akapit.', 'Drugi akapit.']
+    },
+    {
+        type: 'plain-text',
+        body: 'Sam tekst bez nagłówka.'
+    },
+    {
+        type: 'divider'
+    },
+    {
+        type: 'banner',
+        image: 'assets/articleart/osobowy.title.png',
+        alt: ''
+    },
+    {
+        type: 'image-left',
+        image: 'assets/articleart/zdjecie.png',
+        alt: 'Opis zdjęcia',
+        heading: 'Zdjęcie po lewej',
+        body: 'Tekst po prawej.'
+    },
+    {
+        type: 'image-right',
+        image: 'assets/articleart/zdjecie-2.png',
+        alt: 'Opis drugiego zdjęcia',
+        heading: 'Zdjęcie po prawej',
+        body: 'Czarny tekst wyrównany do prawej.'
+    }
+]
+```
 
-## Edycja
+Dostępne typy:
 
-- `index.html`: nazwa firmy, menu i treść strony głównej.
-- `app.js`: obiekt `divisions` zawiera wszystkie opisy działów. To przykładowe treści do zastąpienia własnym lore. Dwa robocze pola ze szkicu zastąpiono działami Rozwiązania przemysłowe oraz Serwis i części.
-- `style.css`: wygląd, kolory i animacje. Zmienna `--purple` i wartości kolorów w arkuszu odpowiadają za akcenty fioletowe.
-- `assets/industry.png`: ilustracja zakładu, wygenerowana na potrzeby projektu. Zastąp własnym zdjęciem przy zachowaniu nazwy albo zmień ścieżki w CSS.
+- `intro` — szerszy nagłówek po lewej i tekst po prawej;
+- `text` — nagłówek nad tekstem;
+- `plain-text` — sam tekst bez nagłówka;
+- `divider` — pozioma czarna linia między fragmentami;
+- `banner` — samo zdjęcie na całą szerokość działu, bez nagłówka i akapitów;
+- `image-left` — zdjęcie po lewej, tekst po prawej;
+- `image-right` — tekst wyrównany do prawej po lewej stronie, zdjęcie po prawej.
 
-## Działanie
+`body` może być jednym tekstem albo tablicą tekstów — każdy element tablicy staje się osobnym akapitem. `heading` jest opcjonalny. Zdjęcia mają ramkę `1px solid #000000`, taką jak kafelki `division-grid`.
 
-Kliknięcie działu przesuwa stronę i przenosi ukośny pas na prawą krawędź. Nagłówek otwartego działu pozostaje przy górnej krawędzi; treść i ilustracja przewijają się pod nim. Powrót: przycisk strzałki, przycisk pod artykułem lub Escape. Działy mają własne adresy z fragmentem, np. `#transformator`; działa też przycisk Wstecz przeglądarki.
+## Gdzie zmieniać wygląd
 
-Na małych ekranach nawigacja jest poziomym przewijanym paskiem u dołu. Ustawienie systemowe ograniczonego ruchu wyłącza animacje.
+Polecenia stylu nie znajdują się w `app.js`. Funkcja `renderSection()` w `app.js` jedynie tworzy elementy i przypisuje im klasy. Właściwe style są pod koniec `style.css`, poniżej komentarza `Fragmenty treści — typ wybierasz w app.js`:
 
-Informacja EULA jest przykładową notą do roleplayu, nie gotową umową prawną. Projekt nie zawiera analityki, formularzy ani kont. Teksty nie są rzeczywistą ofertą handlową ani dokumentacją techniczną.
+- `.article-intro` — proporcje nagłówka i tekstu intro;
+- `.article-media` — dwie kolumny zdjęcia i tekstu;
+- `.article-media.image-right .article-copy` — wyrównanie oraz kolor tekstu w `image-right`;
+- `.article-photo` — ramka i rozmiar zdjęcia;
+- `.article-plain-text` — szerokość samego tekstu;
+- `.article-divider` — wygląd i odstępy separatora;
+- `.article-banner` oraz `.article-banner img` — wysokość, szerokość i kadrowanie bannera;
+- końcowe `@media(max-width:760px)` — zachowanie tych fragmentów na telefonie.
+
+## Publikacja na GitHub Pages
+
+Wgraj `index.html`, `style.css`, `app.js`, `.nojekyll` oraz cały folder `assets` do głównego katalogu repozytorium. W ustawieniach repozytorium wybierz Pages, publikację z gałęzi `main` i katalog `/ (root)`. Odnośniki do arkusza i skryptu mają numer `?v=7`, aby przeglądarka pobrała aktualne pliki.
