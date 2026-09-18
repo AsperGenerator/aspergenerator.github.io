@@ -2,8 +2,7 @@
 Każdy dział ma sections: [ ... ]. Dodawaj dowolną liczbę obiektów, w dowolnej kolejności.
 type: 'banner' - zdjęcie na całą szerokość działu, bez tekstu i akapitów.
 type: 'lr-text' - nagłówek po lewej, tekst po prawej.
-type: 'head-text' - nagłówek nad tekstem.
-type: 'text' - sam tekst, bez nagłówka.
+type: 'text' - nagłówek z tekstem.
 type: 'img-left' - zdjęcie po lewej, tekst po prawej.
 type: 'img-right' - tekst po lewej, zdjęcie po prawej.
 type: 'button-right' - przycisk z tekstem.
@@ -12,7 +11,7 @@ heading jest opcjonalny. body: tekst lub tablica akapitów.
 Przykład fragmentu ze zdjęciem:
 {
     type: 'img-left',
-    image: 'assets/industry.png',
+    image: 'assets/industry.jpg',
     alt: 'Zakład energetyczny',
     heading: 'Nasz zakład',
     body: ['Pierwszy akapit.', 'Drugi akapit.']
@@ -33,7 +32,7 @@ const divisions = {
     sections: [
       {
         type: "banner",
-        image: "assets/articleart/osobowy.title.png",
+        image: "assets/articleart/osobowy.title.jpg",
         alt: "Osobówki",
       },
       {
@@ -44,34 +43,34 @@ const divisions = {
       { type: "divider" },
       {
         type: "img-right",
-        image: "assets/articleart/osobowy.kragaut.1.png",
+        image: "assets/articleart/osobowy.kragaut.1.jpg",
         alt: "Samochód w terenie.",
         heading: "Krągaut",
         body: "Nieco krągły samochód na wysokim poziomie, albo po prostu mistrz szosy. Dla tych, którzy cenią sobie wysoki poziom w samochodzie jak i dla tych, którzy mają niezbyt równą drogę. Może i nie jest terenówką, ale za to komfort to jego drugie imię.",
       },
       {
         type: "img-right",
-        image: "assets/articleart/osobowy.kragaut.2.png",
+        image: "assets/articleart/osobowy.kragaut.2.jpg",
         alt: "Wnętrze krągauta.",
         body: "Wnętrze samochodu jest bardzo wygodne, a ogromne szyby zapewniają niesamowite widoki.",
       },
       { type: "divider" },
       {
         type: "img-left",
-        image: "assets/articleart/osobowy.wolowiec.1.png",
+        image: "assets/articleart/osobowy.wolowiec.1.jpg",
         alt: "Samochód w mieście.",
         heading: "Wołowiec",
         body: "Zbliża się jego premiera. Średniobudżetowy i niewielki, ale dobrze wyposażony samochód do codziennego miejskiego życia. ",
       },
       {
         type: "img-left",
-        image: "assets/articleart/osobowy.wolowiec.2.png",
+        image: "assets/articleart/osobowy.wolowiec.2.jpg",
         alt: "Wnętrze wołowca.",
         body: "Dobrze wyposażone i wszechstronne miejsce wewnątrz jest znakomitym wyborem dla tych, którzy nie chcą za dużo wydać a mieć wszystko, co powinna posiadać osobówka. ",
       },
       {
         type: "img-left",
-        image: "assets/articleart/osobowy.wolowiec.3.png",
+        image: "assets/articleart/osobowy.wolowiec.3.jpg",
         alt: "Big Bagażnik.",
         body: "Mimo niewielkich rozmiarów, bagażnik jest nieproporcjonalnie pojemny. Poza ogromnymi zakupami, zmieści się tam wiele innych rzeczy. ",
       },
@@ -83,12 +82,12 @@ const divisions = {
     sections: [
       {
         type: "banner",
-        image: "assets/articleart/lekkie.title.png",
+        image: "assets/articleart/lekkie.title.jpg",
         alt: "Dostawczak",
       },
       {
         type: "img-right",
-        image: "assets/articleart/lekkie.intro.png",
+        image: "assets/articleart/lekkie.intro.jpg",
         alt: "Załadowany krofter.",
         heading: "Transport na własną rękę.",
         body: "Niewielkie, ale nie wymagają dodatkowych uprawnień. Przewiozą meble, kartony i wiele więcej.",
@@ -96,14 +95,14 @@ const divisions = {
       { type: "divider" },
       {
         type: "img-left",
-        image: "assets/articleart/lekkie.krofter.1.png",
+        image: "assets/articleart/lekkie.krofter.1.jpg",
         alt: "Krofter na parkingu.",
         heading: "Krofter",
         body: "Bogato wyposażony, trzy miejsca siedzące, oświetlenie przestrzeni bagażowej, a nawet wysuwany razem z drzwiami schodek. Posiada wysuwane światła na masce.",
       },
       {
         type: "img-left",
-        image: "assets/articleart/lekkie.krofter.2.png",
+        image: "assets/articleart/lekkie.krofter.2.jpg",
         alt: "Wnętrze kroftera.",
         body: "Luka bagażowa jest bardzo wysoka, oświetlenie pozwoli na pracowanie w nocy, łatwiejsze odczytywanie etykiet, czy szybsze odnalezienie igły w stogu siana. Można nawet zrobić w niej mobuilne biuro, czego się sami raz podjęliśmy.",
       },
@@ -114,7 +113,7 @@ const divisions = {
     title: "Samochody użytkowe ciężkie",
     sections: [
       {
-        type: "head-text",
+        type: "text",
         heading: "Strona w budowie.",
       },
       {
@@ -128,7 +127,7 @@ const divisions = {
     title: "Pojazdy i sprzęt techniczny",
     sections: [
       {
-        type: "head-text",
+        type: "text",
         heading: "Strona w budowie.",
       },
       {
@@ -142,7 +141,7 @@ const divisions = {
     title: "Drony",
     sections: [
       {
-        type: "head-text",
+        type: "text",
         heading: "Strona w budowie.",
       },
       {
@@ -157,58 +156,139 @@ const divisions = {
     sections: [
       {
         type: "banner",
-        image: "assets/articleart/komora.title.png",
+        image: "assets/articleart/komora.title.jpg",
         alt: "Komora",
       },
       {
-        type: "head-text",
+        type: "text",
         heading: "Przede wszystkim czysty Napoligrad.",
         body: "Cała energia zasilająca Napoligrad pochodzi z czystego źródła jakim jest elektrownia atomowa operowana przez AsperGenerator.",
       },
       {
         type: "img-left",
-        image: "assets/articleart/komora.columbus.png",
+        image: "assets/articleart/komora.columbus.jpg",
         alt: "Komora Transformatora w zakładzie Columbus.",
         body: "Komora Transformatora dostarcza energię zawsze kiedy to możliwe - gdy jest moc, masz moc.\n Na wypadek przerw, zaprzyjaźniona firma Columbus oferuje magazyny energii, które dla ciebie podłączymy.",
       },
       {
         type: "img-left",
-        image: "assets/articleart/komora.wymiary.png",
-        alt: "Graficzne przedstawienie wymiarów Komora Transformatora",
+        image: "assets/articleart/komora.wymiary.jpg",
+        alt: "Graficzne przedstawienie wymiarów Komory Transformatora",
         body: "Komora Transformatora nie zajmuje dużo miejsca, jej wymiary to 6x18. Wyposażona jest w zdalnie otwierane drzwi oraz wysuwaną kamerę, która daje podgląd na frontową część obiektu, aby zagwarantować bezpieczeństwo i sprawne działanie.",
       },
       {
         type: "button-right",
         body: "Zobacz pełne warunki korzystania na stronie",
-        buttonText: "EULA Komora Transformatora",
+        buttonText: "EULA Komory Transformatora",
+        href: "#eulakomoratransformatora",
+      },
+      {
+        type: "banner",
+        image: "assets/pekaboo.webp",
+      },
+    ],
+  },
+  uslugi: {
+    label: "07",
+    title: "Usługi",
+    sections: [
+      {
+        type: "text",
+        heading: "Strona nieukończona.",
+      },
+      { type: "divider" },
+      {
+        type: "text",
+        heading: "Podnoszenie dźwigiem",
+        body: "AsperGenerator posiada w ofercie dźwig do kupienia. Jeśli nie zamierzasz kupować dźwigu, możesz go wynająć razem z operatorem.",
+      },
+      { type: "divider" },
+      {
+        type: "text",
+        heading: "transport ciężki.",
+        body: "Opracowujemy transportery SPMT. Zanim będą dostępne, możesz zamówić usługę transportu przy ich użyciu. Przyczynisz się tym do szybszego ich ukończenia i wydania.",
+      },
+    ],
+  },
+
+  eula: {
+    label: "08",
+    title: "EULA i informacje",
+    sections: [
+      {
+        type: "text",
+        heading: "1. Informacje ogólne.",
+        body: [
+          "1.1. EULA dotyczy wszystkich produktów AsperGenerator",
+          "1.2. Capybara Industries jest dawną nazwą AsperGenerator. Wszystkie umowy podpisane z Capybara Industries są dalej aktualne.",
+          "1.3. Informacje o zmianach znajdują się na dole strony.",
+        ],
+      },
+      { type: "divider" },
+      {
+        type: "text",
+        heading: "2. Zasady użytkowania produktów.",
+        body: [
+          "2.1. Ze względów bezpieczeństwa, AsperGenerator jest jedynym podmiotem, mogącym modyfikować pojazdy, urządzena i wszystkie inne produkty. Zabrania się wykonywania zmian w pojeździe na własną rękę. Zmiany te obejmują strukturę pojazdu, kolor, ustawienia podzespołów i inne.\nNie obejmuje to bagażu, elementów dekoracyjnych jak lampki, flagi, ani inna inna dekoracja, nie naruszająca kontrukcji ani malowania produktu.",
+          "2.2. Ze względów bezpieczeństwa, AsperGenerator jest jedynym podmiotem, mogącym naprawiać produkty.",
+          "2.3. Zabrania się odsprzedawania ani oddawania produktów AsperGenerator.",
+          "2.4. Każdy produkt może posiadać zmienioną wersję EULA",
+        ],
+      },
+      { type: "divider" },
+      {
+        type: "text",
+        heading: "3. Zobowiązania AsperGenerator.",
+        body: [
+          "3.1. AsperGenerator zobowiązuje się do odkupienia produktu na prośbę klienta. Wycenę prowadzi AsperGenerator.",
+          "3.2. AsperGenerator nie ma prawa wymusić zwrotu produktów. Nie dotyczy to sytuacji, w których klient łamie zapisy EULA.",
+        ],
+      },
+      { type: "divider" },
+      {
+        type: "button-right",
+        body: "EULA Komory Transformatora znajduje się w osobnym miejscu.",
+        buttonText: "EULA Komory Transformatora",
         href: "#eulakomoratransformatora",
       },
     ],
   },
-  eula: {
-    label: "07",
-    title: "EULA i informacje",
-    sections: [
-      {
-        type: "head-text",
-        heading: "Strona w budowie.",
-      },
-      {
-        type: "banner",
-        image: "assets/budowa.gif",
-      },
-    ],
-  },
   eulakomoratransformatora: {
-    title: "EULA Komora Transformatora",
+    title: "EULA Komory Transformatora",
     sections: [
       {
-        type: "head-text",
-        heading: "Strona w budowie.",
+        type: "text",
+        heading: "1. Zapewnienie zakładu AsperGenerator - część stała",
+        body: [
+          "1.1. AsperGenerator będzie dostarczało energię elektryczną zawsze kiedy jest to możliwe, niezależnie od stosunków między podmiotami i podobnymi. Jedynym wyjątkiem jest komunikat od NRMN",
+          "1.2. Administratorem i jedyną uprawnioną grupą są technicy elektrycy i energetycy AsperGenerator. Tylko te grupy są upoważniona do zdalnego jak i bezpośredniego dostępu do Komora Transformatora",
+          "1.3. AsperGenerator zastrzega sobie prawo do edycji części stałej. Zapewniamy jednak, że zmiany będą głównie kosmetyczne oraz/albo wynikające z ewolucji",
+        ],
       },
+      { type: "divider" },
       {
-        type: "banner",
-        image: "assets/budowa.gif",
+        type: "text",
+        heading: "2. Przepisy ogólne",
+        body: [
+          "2.1. Zakazuje się jakiejkolwiek ingerencji w Komorę Transformatora, gdyż skutkować to może poważnym uszkodzeniem Komory Transformatora oraz pobliskich obiektów, uszkodzeniem ciała, a w najgorszym przypadku śmiercią.",
+          "3.7. Problemy z Komorą Transformatora należy zgłaszać do AsperGenerator. W przypadku wykrycia problemów przez AsperGenerator, wysłane zostaną odpowiednie jednostki.",
+        ],
+      },
+      { type: "divider" },
+      {
+        type: "text",
+        heading: "3. Rozmieszczenie",
+        body: [
+          "3.1. Komora Transformatora wymaga przestrzeni o wymiarach 22x10, z czego jej faktyczne wymiary to ~18x6",
+          "3.2. Zarówno na, jak i nad jej wymaganą przestrzenią zakazuje się umieszczania jakichkolwiek przeszkód.",
+          "3.3. Wyznaczone miejsce musi być łatwo dostępne dla AsperGenerator w przypadku interwencji, kontroli i podobnych. W przypadku umieszczenia jej w części zamkniętej placówki, należy nadać uprawnienia dostępu dla uprawnionych jednostek opisanych w części 1.2. Dostęp ten powinien być równie prosty jak dla pracowników mających dostęp do części, w której Komora Transformatora jest umieszczona.",
+          "3.4. Komora Transformatora jest sterowana zdalnie. Wyposażona jest w zdalnie otwierane drzwi oraz kamerę, która daje podgląd na frontową część Komory Transformatora.",
+        ],
+      },
+      { type: "divider" },
+      {
+        type: "text",
+        body: ["Wprowadzono: 10.3.2026", "Ostatnia aktualizacja: 15.9.2026"],
       },
     ],
   },
@@ -243,9 +323,6 @@ function renderSection(section) {
   const body = renderParagraphs(section.body);
   if (section.type === "lr-text") {
     return `<section class="article-section article-lr-text">${heading}<div>${body}</div></section>`;
-  }
-  if (section.type === "text") {
-    return `<section class="article-section article-plain-text">${body}</section>`;
   }
   if (section.type === "divider") {
     return '<hr class="article-divider" aria-hidden="true">';

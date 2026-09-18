@@ -902,10 +902,6 @@ body.open .detail-rail {
   min-width: 0;
 }
 
-.article-plain-text {
-  max-width: 75ch;
-}
-
 .article-divider {
   width: 100%;
   height: 0;
